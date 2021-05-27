@@ -69,4 +69,8 @@ INLINE void ApplicationSetAtqa(uint16_t Atqa) {
 	ActiveConfiguration.ApplicationSetAtqaFunc(Atqa);
 }
 
+INLINE void ApplicationSetSignature(char *signature) {
+	ActiveConfiguration.ApplicationSetSignatureFunc(signature);
+}
+
 #endif /* APPLICATION_H_ */

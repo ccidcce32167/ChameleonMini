@@ -478,6 +478,25 @@ static const PROGMEM ConfigurationType ConfigurationTable[] = {
         .TagFamily = TAG_FAMILY_ISO15693
     },
 #endif
+#ifdef CONFIG_NTAG215_SUPPORT
+    [CONFIG_NTAG215] = {
+        .CodecInitFunc = ISO14443ACodecInit,
+        .CodecDeInitFunc = ISO14443ACodecDeInit,
+        .CodecTaskFunc = ISO14443ACodecTask,
+        .ApplicationInitFunc = NTAG215AppInit,
+        .ApplicationResetFunc = NTAG215AppReset,
+        .ApplicationTaskFunc = NTAG215AppTask,
+        .ApplicationTickFunc = ApplicationTickDummy,
+        .ApplicationProcessFunc = NTAG215AppProcess,
+        .ApplicationGetUidFunc = NTAG215GetUid,
+        .ApplicationSetUidFunc = NTAG215SetUid,
+        .ApplicationSetSignatureFunc = NTAG215SetSignature,
+        .UidSize = NTAG215_UID_SIZE,
+        .MemorySize = NTAG215_MEM_SIZE,
+        .ReadOnly = false,
+        .TagFamily = TAG_FAMILY_ISO14443A
+    },
+#endif
 };
 
 ConfigurationType ActiveConfiguration;

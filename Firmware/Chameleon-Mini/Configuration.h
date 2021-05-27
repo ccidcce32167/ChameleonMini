@@ -160,6 +160,11 @@ typedef struct {
      */
     void (*ApplicationSetAtqaFunc) (uint16_t Atqa);
     /**
+     * Writes a given signature to the current configuration.
+     * \param signature	The source buffer.
+     */
+    void (*ApplicationSetSignatureFunc) (char *signature);
+    /**
      * @}
      */
 
