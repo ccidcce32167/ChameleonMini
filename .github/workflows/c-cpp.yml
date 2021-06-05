@@ -13,7 +13,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: enter
-      run: cd Firmware/Chameleon-Mini
     - name: make
       run: make
+      working-directory: Firmware/Chameleon-Mini/
