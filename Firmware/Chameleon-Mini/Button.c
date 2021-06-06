@@ -210,7 +210,7 @@ static void ExecuteButtonAction(ButtonActionEnum ButtonAction) {
             break;
         }
         case BUTTON_ACTION_RESET_AMIIBO: {
-            CommandExecute("CLEAR");
+            MemoryClear();
             for (uint8_t i = 0; i < ActiveConfiguration.UidSize; i++) {
                 UidBuffer[i] = RandomGetByte();
             }
